@@ -1,0 +1,37 @@
+@model sharedclipboard.Models.SharedBoardContentBoard
+
+@{
+    ViewData["Title"] = "Shared Board";
+}
+
+<div id="app">
+    
+    <h2>{{title}} @Model.Id</h2>
+    <label>{{ clipboard_txt }}</label>
+
+    <div style="display:none;">
+        <textarea id="clipbaordArea" v-model="clipboard_txt" placeholder="add multiple lines"></textarea>
+    </div>
+    
+    <div id="dragFile" draggable="true" style="height:150px; padding: 20px 0; background-color:azure;">
+    </div>
+
+    <div>
+        <div>Links</div>
+        <div>
+            <div>Link/video thumb/image thumb (x)</div>
+            <div>Link/video thumb/image thumb (x)</div>
+        </div>
+        
+    </div>
+</div>
+
+@section Scripts{
+
+     <environment include="Development">
+        <script src="~/js/clipboard.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/clipboard.min.js" asp-append-version="true"></script>
+    </environment>
+}

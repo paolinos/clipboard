@@ -1,0 +1,6 @@
+src/sharedclipboard/bin
+src/sharedclipboard/obj
+
+.vscode
+
+src/sharedclipboard/wwwroot/assets
